@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let monesko = prompt("Monenneko Fibonaccin lukujonossa ensiintyvän luvun haluat?")
+
+    const Fibo = (a) => {
+      if (a == 0) {
+        return 0;
+      }
+      else if(a == 1){
+        return 1;
+      }
+      else {
+        return Fibo(a - 1) + Fibo(a - 2);
+      }
+    };
+
+    document.write(Fibo(monesko));
+</script>
+</body>
+</html>

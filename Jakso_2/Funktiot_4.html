@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let luku1 = prompt("Anna ensimmäinen luku");
+    let luku2 = prompt("Anna toinen luku");
+    let luku3 = prompt("Anna kolmas luku");
+
+    const vertailu = (a,b,c) =>{
+      if (a<=b){
+        if (b<c){
+          return c;
+        }
+        else{
+          return b;
+        }
+      }
+      else{
+        return a;
+      }
+    };
+
+    document.write("Antamastasi luvuista suurion oli: " + vertailu(luku1, luku2, luku3));
+
+</script>
+</body>
+</html>

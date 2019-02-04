@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let taulukko = [];
+    let maara = prompt("Kuinka monta luku haluat antaa?");
+
+    for (i=1; i<=maara; i++){
+      taulukko[i-1] = prompt("Anna taulukon " + i + ". luku");
+    }
+
+    const vastaluvuksi = (a) =>{
+      for (j=0; j<a.length; j++){
+        if (a[j] < 0){
+          a[j] = Math.abs(a[j]);
+        }
+        else if (a[j] > 0){
+          a[j] = -a[j];
+        }
+      }
+    };
+
+    vastaluvuksi(taulukko);
+    document.write("Taulukkosi lukujen vastaluvut ovat:<br>");
+    for (k=0; k<taulukko.length; k++){
+      document.write(taulukko[k] + "<br>");
+    }
+</script>
+</body>
+</html>

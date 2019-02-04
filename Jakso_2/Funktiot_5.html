@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let taulukko = [];
+    let maara = prompt("Kuinka monta sanaa on lauseessasi?");
+
+    for (i=1; i<=maara; i++){
+      taulukko[i-1] = prompt("Anna lauseen " + i + ". sana");
+    }
+
+    const liitä = (a) =>{
+      let lause = a[0];
+      for (j=1; j<a.length; j++){
+        lause = lause + " " +a[j];
+      }
+      return lause;
+    };
+
+    document.write("Lauseesi oli: " + liitä(taulukko));
+</script>
+</body>
+</html>
