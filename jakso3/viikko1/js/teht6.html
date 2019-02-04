@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="pienempi">pienempi</button>
+<button id="suurempi">suurempi</button>
+<p id="arvaus"> 50 </p>
+<script>
+    let pien = document.querySelector("#pienempi");
+    let suur = document.querySelector("#suurempi");
+    let arvaus = document.querySelector("#arvaus");
+    let maxArvo = 100;
+    let minArvo = 0;
+
+
+    let koneArvaus = 50;
+
+    let painaPien = () => {
+      if((koneArvaus % 2) === 0){
+        maxArvo = koneArvaus;
+        koneArvaus = (minArvo+maxArvo) / 2;
+        console.log(koneArvaus);
+        if(koneArvaus%1 !== 0){
+          koneArvaus = koneArvaus - 0.5;
+        }
+        arvaus.innerHTML = koneArvaus;
+      }
+      else if((koneArvaus % 2) === 1){
+        maxArvo = koneArvaus;
+        koneArvaus = (minArvo+maxArvo)/2;
+        console.log(koneArvaus);
+        if(koneArvaus%1 !== 0){
+          koneArvaus = koneArvaus - 0.5;
+        }
+        arvaus.innerHTML = koneArvaus;
+      }
+    };
+    let painaSuur = () => {
+      if((koneArvaus % 2) === 0){
+        minArvo = koneArvaus;
+        koneArvaus = (minArvo+maxArvo)/2;
+        console.log(koneArvaus);
+        if(koneArvaus%1 !== 0){
+          koneArvaus = koneArvaus - 0.5;
+        }
+        arvaus.innerHTML = koneArvaus;
+      }
+      else if((koneArvaus % 2) === 1){
+        minArvo = koneArvaus;
+        koneArvaus = (minArvo+maxArvo)/2;
+        console.log(koneArvaus);
+        if(koneArvaus%1 !== 0){
+          koneArvaus = koneArvaus - 0.5;
+        }
+        arvaus.innerHTML = koneArvaus;
+      }
+    };
+
+    pien.addEventListener("click", painaPien);
+    suur.addEventListener("click", painaSuur);
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="random"> arvo numerot </button>
+<p id="numerot"></p>
+<script>
+    let a = [];
+    let uniqueNum;
+    let varmistus = false;
+    let numerot = document.querySelector("#numerot");
+    let lottokone = () => {
+      numerot.innerHTML = "";
+      a = [];
+      for (i = 0; a.length < 7; i++) {
+        uniqueNum = Math.floor(Math.random() * 40 + 1);
+        for (j = 0; j < a.length && varmistus === false; j++) {
+          if (+uniqueNum === +(a[j])) {
+            varmistus = true;
+            console.log(uniqueNum)
+          }
+          else {
+            varmistus = false
+          }
+        }
+        if (varmistus === false) {
+          a[i] = uniqueNum;
+        }
+        else {
+          varmistus = false;
+          i--
+        }
+      }
+      console.log(a);
+      a.sort( (a, b) => {
+        return a - b
+      });
+      console.log(a);
+      numerot.innerHTML = a.join()
+    };
+
+    document.querySelector("#random").addEventListener("click", lottokone);
+
+</script>
+</body>
+</html>

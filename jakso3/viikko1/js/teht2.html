@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>eka numero</p>
+    <input id="eka">
+    <p>toka numero</p>
+    <input id="toka">
+    <button id="nappi"> laske </button>
+
+<script>
+    let gcd = (eka, toka) => {
+        if (!toka) {
+        return eka;
+        }
+
+        return gcd(toka, eka % toka);
+    };
+    let laske = () => {
+      let eka = document.querySelector("#eka").value;
+      let toka = document.querySelector("#toka").value;
+      let jakaja = gcd(eka, toka);
+
+      let ekaSiev = eka/jakaja;
+      let tokaSiev = toka/jakaja;
+      console.log(ekaSiev + "/" + tokaSiev);
+    };
+    document.querySelector("#nappi").addEventListener("click", laske)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>paino(kg):</p>
+    <input id="paino">
+    <p>pituus(cm)</p>
+    <input id="pituus">
+    <br>
+    <button id="nappi">laske</button>
+<script>
+
+    let BMI = () => {
+      let paino = document.querySelector("#paino").value;
+      let pituus = document.querySelector("#pituus").value;
+      let BMI = paino/(2*(pituus/100));
+      if(BMI > 0){
+        console.log(BMI);
+      }
+      else if (!(BMI > 0)){
+        console.log("undifined");
+      }
+    };
+
+    document.querySelector("#nappi").addEventListener("click", BMI);
+</script>
+</body>
+</html>

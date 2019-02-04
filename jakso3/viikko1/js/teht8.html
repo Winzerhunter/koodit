@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  /* arpoo lotto numerot */
+  let a = [];
+  let b = [];
+  let uniqueNum;
+  let lottokone = () => {
+    let varmistus = false;
+    for (i = 0; a.length < 7; i++) {
+      uniqueNum = Math.floor(Math.random() * 40 + 1);
+      for (j = 0; j < a.length && varmistus === false; j++) {
+        if (+uniqueNum === +(a[j])) {
+          varmistus = true;
+        }
+        else {
+          varmistus = false
+        }
+      }
+      if (varmistus === false) {
+        a[i] = uniqueNum;
+      }
+      else {
+        varmistus = false;
+        i--
+      }
+    }
+    a.sort((a, b) => {
+      return a - b
+    });
+    console.log("lotto numerot");
+    console.log(a);
+  };
+  lottokone();
+
+  /* arpoo ensimmäiset arvaukset */
+
+  let osuma = 0;
+  let arvauksia = (osuma) => {
+    if(osuma !== 0){
+      b = [];
+    }
+    let varmistus = false;
+    for (i = 0; b.length < 7; i++) {
+      uniqueNum = Math.floor(Math.random() * 40 + 1);
+      for (j = 0; j < b.length && varmistus === false; j++) {
+        if (+uniqueNum === +(b[j])) {
+          varmistus = true;
+        }
+        else {
+          varmistus = false
+        }
+      }
+      if (varmistus === false) {
+        b[i] = uniqueNum;
+      }
+      else {
+        varmistus = false;
+        i--
+      }
+    }
+  };
+  arvauksia(osuma);
+
+  /* vertaa arvauksia lotto numeroihin niin kauna kunnes ei ole yhtään oikein arvattua */
+
+  do {
+    osuma = 0;
+    for (k = 0; k < 7; k++) {
+      if (b[0] === a[k]) {
+        osuma++
+      }
+      if (b[1] === a[k]) {
+        osuma++
+      }
+      if (b[2] === a[k]) {
+        osuma++
+      }
+      if (b[3] === a[k]) {
+        osuma++
+      }
+      if (b[4] === a[k]) {
+        osuma++
+      }
+      if (b[5] === a[k]) {
+        osuma++
+      }
+      if (b[6] === a[k]) {
+        osuma++
+      }
+    }
+    if(osuma !== 0){
+      arvauksia(osuma);
+    }
+  }while(osuma !== 0);
+
+  /* etsitään oikeat numerot */
+
+  let numero1 = false;
+  b[0] = 1;
+  while(numero1 !== true){
+    if(b[0] === a[0]){
+      numero1 = true;
+    }
+    else{
+      b[0]++;
+    }
+  }
+  console.log("1. numero on " + b[0]);
+
+  let numero2 = false;
+  b[1] = b[0] + 1;
+  while(numero2 !== true){
+    if(b[1] === a[1]){
+      numero2 = true;
+    }
+    else{
+      b[1]++;
+    }
+  }
+  console.log("2. numero on " + b[1]);
+
+  let numero3 = false;
+  b[2] = b[1] + 1;
+  while(numero3 !== true){
+    if(b[2] === a[2]){
+      numero3 = true;
+    }
+    else{
+      b[2]++;
+    }
+  }
+  console.log("3. numero on " + b[2]);
+
+  let numero4 = false;
+  b[3] = b[2] + 1;
+  while(numero4 !== true){
+    if(b[3] === a[3]){
+      numero4 = true;
+    }
+    else{
+      b[3]++;
+    }
+  }
+  console.log("4. numero on " + b[3]);
+
+  let numero5 = false;
+  b[4] = b[3] + 1;
+  while(numero5 !== true){
+    if(b[4] === a[4]){
+      numero5 = true;
+    }
+    else{
+      b[4]++;
+    }
+  }
+  console.log("5. numero on " + b[4]);
+
+  let numero6 = false;
+  b[5] = b[4] + 1;
+  while(numero6 !== true){
+    if(b[5] === a[5]){
+      numero6 = true;
+    }
+    else{
+      b[5]++;
+    }
+  }
+  console.log("6. numero on " + b[5]);
+
+  let numero7 = false;
+  b[6] = b[5] + 1;
+  while(numero7 !== true){
+    if(b[6] === a[6]){
+      numero7 = true;
+    }
+    else{
+      b[6]++;
+    }
+  }
+  console.log("7. numero on " + b[6]);
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

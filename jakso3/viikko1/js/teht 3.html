@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>Arvaa luku lukujen 1 ja 100 väliltä</p>
+    <input id="arvaus">
+    <button id="nappi"> Arvaa </button>
+    <p id="ohje"></p>
+<script>
+    const min = 1;
+    const max = 100;
+
+    let arvattava = Math.floor(Math.random() * max + min);
+    console.log(arvattava);
+    let funk = () => {
+      let text = document.querySelector("#ohje");
+      let arvaus = document.querySelector("#arvaus").value;
+      if(+arvaus === +arvattava){
+        text.innerHTML = "";
+        let oikein = document.createTextNode("Arvauksesi on oikein");
+        text.appendChild(oikein);
+      }
+      else if(arvaus < arvattava) {
+        text.innerHTML = "";
+        let pieni = document.createTextNode("liian pieni");
+        text.appendChild(pieni);
+      }
+      else if(arvaus > arvattava) {
+        text.innerHTML = "";
+        let iso = document.createTextNode("liian suuri");
+        text.appendChild(iso);
+      }
+    };
+    document.querySelector("#nappi").addEventListener("click", funk)
+</script>
+</body>
+</html>

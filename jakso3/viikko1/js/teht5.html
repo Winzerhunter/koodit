@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="random"> arvo lotto numerot </button>
+<br>
+<p>Anna 7 eri numeroa (1-40)</p>
+<input id="numero1" placeholder="numero 1">
+<input id="numero2" placeholder="numero 2">
+<input id="numero3" placeholder="numero 3">
+<input id="numero4" placeholder="numero 4">
+<input id="numero5" placeholder="numero 5">
+<input id="numero6" placeholder="numero 6">
+<input id="numero7" placeholder="numero 7">
+<button id="arvaa">kuinka monta oikein</button>
+<p id="kuinkaMontaOikein"> 0 </p>
+<br>
+<p>TEHT.8: arvaa ensin vain ykkönen ensimmäisenä numerona (jos pitää arvata kaikki numerot niin arvaa random numeroita niin kaunan että saat 0 oikein). jos arvaus on väärin, jatka kokajan suurentamalla numeora yhdellä (eli seuraavana 2 sitten 3...). kun osut oikeaan jätä kyseinen numero
+siihen ja aloita seuraanvan numeron arvaaminen yhden suuremmasta kuin edellienn numero (jos ensimmäinen oikea numero oli 7, aloita toinen numero numerolla 8). toista kunnes löydät kaikki 7.</p>
+<script>
+  let a = [];
+  let uniqueNum;
+  let varmistus = false;
+  let kuinkaMontaOikein = document.querySelector("#kuinkaMontaOikein");
+  let osuma = 0;
+  let lottokone = () => {
+    a = [];
+    for (i = 0; a.length < 7; i++) {
+      uniqueNum = Math.floor(Math.random() * 40 + 1);
+      for (j = 0; j < a.length && varmistus === false; j++) {
+        if (+uniqueNum === +(a[j])) {
+          varmistus = true;
+        }
+        else {
+          varmistus = false
+        }
+      }
+      if (varmistus === false) {
+        a[i] = uniqueNum;
+      }
+      else {
+        varmistus = false;
+        i--
+      }
+    }
+    console.log(a);
+    a.sort((a, b) => {
+      return a - b
+    });
+    console.log(a);
+  };
+  let arvaaNumeroita = () => {
+    let numero1 = document.querySelector("#numero1").value;
+    let numero2 = document.querySelector("#numero2").value;
+    let numero3 = document.querySelector("#numero3").value;
+    let numero4 = document.querySelector("#numero4").value;
+    let numero5 = document.querySelector("#numero5").value;
+    let numero6 = document.querySelector("#numero6").value;
+    let numero7 = document.querySelector("#numero7").value;
+    kuinkaMontaOikein.innerHTML = "";
+    osuma = 0;
+    for (k = 0; k < 7; k++) {
+      if (+numero1 === a[k]) {
+        osuma++
+      }
+      ;
+      if (+numero2 === a[k]) {
+        osuma++
+      }
+      ;
+      if (+numero3 === a[k]) {
+        osuma++
+      }
+      ;
+      if (+numero4 === a[k]) {
+        osuma++
+      }
+      ;
+      if (+numero5 === a[k]) {
+        osuma++
+      }
+      ;
+      if (+numero6 === a[k]) {
+        osuma++
+      }
+      ;
+      if (+numero7 === a[k]) {
+        osuma++
+      }
+      ;
+    }
+    ;
+    console.log(osuma);
+    kuinkaMontaOikein.innerHTML = osuma;
+  };
+
+  document.querySelector("#random").addEventListener("click", lottokone);
+  document.querySelector("#arvaa").addEventListener("click", arvaaNumeroita)
+
+</script>
+</body>
+</html>
