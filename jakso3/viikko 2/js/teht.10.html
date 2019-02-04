@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let rndIntFromTO = (From, To) =>{
+      return (number) => {
+        let a = [];
+        for(i=0; i<number; i++){
+          a[i] = Math.floor(Math.random() * (To-From) + From)
+        }
+        return a;
+      }
+    };
+    let arvonta = rndIntFromTO(1, 10);
+    let b = [];
+    b = arvonta(200).slice();
+    console.log(b);
+    let jako = 0;
+    b.forEach(function (item) {
+      jako = jako + item
+    });
+    console.log(jako/b.length);
+</script>
+</body>
+</html>

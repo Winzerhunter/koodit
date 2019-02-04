@@ -1,0 +1,115 @@
+html{
+    align-content: center;
+}
+body{
+    margin: 0;
+}
+#container{
+    max-height: 675px;
+    max-width: 1180px;
+    margin: auto;
+    position: relative;
+}
+.boxi{
+    margin: 5px;
+    padding: 0;
+    position: absolute;
+}
+#b1{
+    width: calc(100% - 10px);
+    height: calc(67.5px - 10px);
+    background-color: darkgreen;
+}
+#b2{
+    width: calc(20% - 10px);
+    height: calc((67.5px*7) - 10px);
+    background-color: darkblue;
+    top: 67.5px;
+    background-image: url("f70e83c869b8521aded71579534acd97.png") !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#b3{
+    width: calc(35% - 10px);
+    height: calc((67.5px*7) - 10px);
+    background-color: darkred;
+    top: 67.5px;
+    left: 20%;
+}
+#b4{
+    width: calc(45% - 10px);
+    height: calc((67.5px*3.5) - 10px);
+    top: 67.5px;
+    left: 55%;
+    background-color: darkorange;
+    background-image: url("l3r8Aum.jpg") !important ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#b5{
+    width: calc(45% - 10px);
+    height: calc((67.5px*3.5) - 10px);
+    top: calc(67.5px*4.5);
+    left: 55%;
+    background-color: darkcyan;
+}
+#b6{
+    width: calc(100% - 10px);
+    height: calc((67.5px*2) - 10px);
+    top: calc(67.5px*8);
+    background-color: darkgray;
+}
+.banneri{
+    height: 675px;
+    width: calc((100vw - 1200px)/2);
+    background-color: darkmagenta;
+    position: absolute;
+}
+#banneri2{
+    right: 0;
+}
+#b3 > p {
+    color: white;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 800px){
+    #b2{
+        width: calc(35% - 10px);
+        height: calc((67.5px*5) - 10px);
+
+    }
+    #b3{
+        width: calc(65% - 10px);
+        height: calc((67.5px*5) - 10px);
+        left: 35%;
+    }
+    #b4{
+        width: calc(50% - 10px);
+        height: calc((67.5px*2) - 10px);
+        top: calc(67.5px*6);
+        left: 0;
+    }
+    #b5{
+        width: calc(50% - 10px);
+        height: calc((67.5px*2) - 10px);
+        top: calc(67.5px*6);
+        left: 50%;
+    }
+}
+@media screen and (max-width: 500px){
+    #b2{
+        width: calc(100% - 10px);
+        height: calc((67.5px*1.5) - 10px);
+        background-image: url("f5983aa0a235c85e7aa71ffd8f4dee0e.png") !important;
+    }
+    #b3{
+        width: calc(100% - 10px);
+        height: calc((67.5px*3.5) - 10px);
+        top: calc(67.5px*2.5);
+        left: 0;
+    }
+}

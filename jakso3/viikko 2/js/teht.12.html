@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let high = 40;
+  let pickn = (a, amount) => {
+    let b = new Set();
+    for(i=0; b.size<amount && i<(a.length*2); i++){
+      b.add(a[Math.floor(Math.random() * high)]);
+    }
+    return b;
+  };
+
+  let intRange = (low, high, step) => {
+    let a = [low];
+    for(i=0; a[i]<=(high-step); i++){
+        a[i+1] = a[i] + step;
+    }
+    return a;
+  };
+
+  console.log(pickn(intRange(1, high, 1), 7));
+
+</script>
+</body>
+</html>
